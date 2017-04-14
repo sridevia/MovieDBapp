@@ -67,6 +67,16 @@ public class MovieDetailsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_movie_details, container, false);
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
+
+    public void changeText(){
+
+
+    }
+
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

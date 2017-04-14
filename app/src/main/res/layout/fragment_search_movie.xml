@@ -10,18 +10,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/search_textview"
-    android:textAppearance="?android:textAppearanceLarge"
-    android:text="Enetr Text"/>
+    android:text="Enetr Text"
+    android:textAppearance="?android:textAppearanceMedium"
+    android:layout_marginBottom="20dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/enetr_movie"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:hint="Enetr Text"/>
+        android:hint="Enetr Text"
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/submit_button"/>
+        android:id="@+id/submit_button"
+        android:text="submitbutton"
+        android:textColor="#FFBB00"/>
 </LinearLayout>

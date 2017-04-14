@@ -2,6 +2,7 @@ package com.example.sridevi.moviedbapp;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,6 +37,7 @@ public class SearchMovieFragment extends Fragment {
 
     private TextView mSearchTextView;
     private EditText mEditText;
+    CommunicationBetweenFrag communicatefrag;
 
     public SearchMovieFragment() {
         // Required empty public constructor
@@ -63,17 +65,26 @@ public class SearchMovieFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_search_movie, container, false);
-        mSearchTextView = (TextView) rootView.findViewById(R.id.search_textview);
-        mEditText = (EditText)rootView.findViewById(R.id.enetr_movie);
-        Button mSearchButton = (Button) rootView.findViewById(R.id.submit_button);
+        return inflater.inflate(R.layout.fragment_search_movie,container,false);
+        }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+       //View rootView = inflater.inflate(R.layout.fragment_search_movie, container, false);
+        communicatefrag = (CommunicationBetweenFrag) getActivity();
+        mSearchTextView = (TextView)getActivity().findViewById(R.id.search_textview);
+        mEditText = (EditText) getActivity().findViewById(R.id.enetr_movie);
+        Button mSearchButton = (Button)getActivity().findViewById(R.id.submit_button);
         mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 searchMovie();
             }
         });
-        return rootView;
+        //return rootView;
+
+
     }
 
     private void searchMovie() {
