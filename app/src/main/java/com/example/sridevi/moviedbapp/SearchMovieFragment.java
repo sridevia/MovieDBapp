@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.sridevi.moviedbapp.Models.NetworkManager;
+import com.example.sridevi.moviedbapp.utilities.NetworkManager;
 
 import java.io.IOException;
 
@@ -30,14 +30,13 @@ import okhttp3.Response;
  * Use the {@link SearchMovieFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SearchMovieFragment extends Fragment {
+public class SearchMovieFragment extends Fragment{
 
     public static final String TAG = "SearchMovieFragment";
     private OnFragmentInteractionListener mListener;
 
     private TextView mSearchTextView;
     private EditText mEditText;
-    CommunicationBetweenFrag communicatefrag;
 
     public SearchMovieFragment() {
         // Required empty public constructor
@@ -72,8 +71,8 @@ public class SearchMovieFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
        //View rootView = inflater.inflate(R.layout.fragment_search_movie, container, false);
-        communicatefrag = (CommunicationBetweenFrag) getActivity();
-        mSearchTextView = (TextView)getActivity().findViewById(R.id.search_textview);
+
+       // mSearchTextView = (TextView)getActivity().findViewById(R.id.search_textview);
         mEditText = (EditText) getActivity().findViewById(R.id.enetr_movie);
         Button mSearchButton = (Button)getActivity().findViewById(R.id.submit_button);
         mSearchButton.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +87,7 @@ public class SearchMovieFragment extends Fragment {
     }
 
     private void searchMovie() {
-           String searchText = mSearchTextView.getText().toString();
+           String searchText = mEditText.getText().toString();
         Request movieSearchRequest = NetworkManager.getInstance().createSearchRequest(searchText);
         NetworkManager.getInstance().getOkHttpClient().newCall(movieSearchRequest).enqueue(new Callback() {
             @Override
@@ -98,7 +97,7 @@ public class SearchMovieFragment extends Fragment {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                Log.d(TAG, response.body().toString());
+                Log.d(TAG, response.body().source().toString());
             }
         });
     }

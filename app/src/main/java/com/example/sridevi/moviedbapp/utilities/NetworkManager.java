@@ -1,4 +1,4 @@
-package com.example.sridevi.moviedbapp.Models;
+package com.example.sridevi.moviedbapp.utilities;
 
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
