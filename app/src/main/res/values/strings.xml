@@ -3,4 +3,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!---->
+    <!--<string-array name="titles">-->
+    <!--<item>Avatar</item>-->
+    <!--<item>X-men</item>-->
+    <!--<item>Spiderman</item>-->
+    <!--</string-array>-->
+    <string-array name = "desc">-->
+        <item>Jake Sully a paralyzed former Marine becomes mobile again through one such Avatar and falls in love with a  woman</item>
+        <item>In a world where both Mutants and Humans fear each other runs away from home and hitches a ride with another mutant Xavier brings together a special group</item>
+        <item>Based on Marvel Comic superhero character this is a story of Peter Parker who is a nerdy high-schooler.</item>
+    </string-array>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.sridevi.moviedbapp;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -22,6 +23,7 @@ public class MovieDetailsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
      TextView test;
+     String data;
 
     public MovieDetailsFragment() {
         // Required empty public constructor
@@ -52,19 +54,38 @@ public class MovieDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie_details, container, false);
+              View view =  inflater.inflate(R.layout.fragment_movie_details, container, false);
+//        if(savedInstanceState == null)
+//        {
+//
+//        }
+//        else {
+//            data = savedInstanceState.getString("test");
+//            TextView myText = (TextView) view.findViewById(R.id.textView_details);
+//            myText.setText(data);
+//
+//        }
+        return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        test = (TextView) getActivity().findViewById(R.id.text_test);
+        test = (TextView) getActivity().findViewById(R.id.textView_details);
     }
 
-    public void changeText(String data){
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+  //      outState.putString("test",data);
+    }
 
-          test.setText(data);
+    public void changeText(int i){
+//          this.data = data;
+        Resources res = getResources();
+        String[] desc = res.getStringArray(R.array.desc);
+          test.setText(desc[i]);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

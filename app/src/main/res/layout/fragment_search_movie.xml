@@ -1,27 +1,20 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#8BC34A"
-    android:orientation="horizontal"
     tools:context="com.example.sridevi.moviedbapp.SearchMovieFragment">
+<!--<ListView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"></ListView>-->
 
-    <EditText
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:id="@+id/enetr_movie"
-        android:hint="Enetr Text"
-        android:layout_marginStart="20dp"
-        android:layout_marginRight="20dp"
-        />
 
-    <Button
-        android:layout_width="0dp"
-        android:layout_weight="1"
+    <ListView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/submit_button"
-        android:text="submitbutton"
-        android:layout_marginLeft="20dp"
-        android:textColor="#FF5722"/>
-</LinearLayout>
+        android:id="@+id/listView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"/>
+
+</RelativeLayout>
