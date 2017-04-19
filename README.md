@@ -1,3 +1,3 @@
 # MovieDBapp
 Initial Commit
-![device-2017-04-13-221114](https://cloud.githubusercontent.com/assets/18667862/25033988/e4ff705a-2097-11e7-9cec-b541bdfe60b9.png)
+![device-2017-04-16-120816](https://cloud.githubusercontent.com/assets/18667862/25073537/9e2b68f2-229d-11e7-9f24-471d51e4815e.png)
